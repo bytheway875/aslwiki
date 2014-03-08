@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Nickname:
   = @profile.nickname
@@ -8,7 +6,7 @@
   = @profile.bio
 %p
   %b Avatar:
-  = @profile.avatar
+  = image_tag @profile.avatar.url
 %p
   %b City:
   = @profile.city

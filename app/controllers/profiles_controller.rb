@@ -28,7 +28,6 @@ class ProfilesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @profile = @user.build_profile(profile_params)
-    byebug
     respond_to do |format|
       if @profile.save
         format.html { redirect_to user_profile_path(@user, @profile), notice: 'Profile was successfully created.' }

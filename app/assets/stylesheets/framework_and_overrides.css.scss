@@ -9,6 +9,10 @@ main{
   margin-top: 60px !important;
 }
 
+.alert{
+  margin-top: 15px;
+}
+
 .navbar.navbar-default.navbar-fixed-top{
   a{
     font-size:16px;
@@ -18,8 +22,12 @@ main{
 
   li{
     &:hover{
-      transition: all 1s ease;
+      transition: all .5s ease;
       background-color: $orange;
+      border-radius: 0 0 10px 10px;
+      padding-top:5px;
+      height:55px;
+//      margin-top:7px;
     }
   }
   border-bottom-width: 5px;

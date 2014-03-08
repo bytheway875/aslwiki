@@ -1,5 +1,10 @@
 $navbar-default-bg: white;
 $navbar-height: 60px;
-$navbar-default-border: #3FB8FF;
 
-$orange: #FF9D19;
+$orange: lighten(#FF9D19, 20);
+$cyan: #19ff9d;
+$pink: #ff197b;
+$blue: #3FB8FF;
+$light-blue:  #197BFF;
+$navbar-default-border: $blue;
+

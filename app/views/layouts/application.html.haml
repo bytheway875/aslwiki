@@ -9,10 +9,10 @@
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-  %body
+  %body{:id=> content_for?(:body_id) ? yield(:body_id) : "#{params[:controller].parameterize.gsub('_','-')}-#{params[:action].parameterize.gsub('_','-')}" }
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
       = render 'layouts/messages'
-      .container
+      .container.scrollable
         = yield
