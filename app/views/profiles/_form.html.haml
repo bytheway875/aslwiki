@@ -1,12 +1,20 @@
-= simple_form_for [@profile, @user] do |f|
-  = f.error_notification
 
-  .form-inputs
-    = f.input :nickname
-    = f.input :bio
-    = f.input :avatar
-    = f.input :city
-    = f.input :state
+= simple_form_for([@user, @profile]) do |f|
+  %fieldset
+    = f.error_notification
+    .row
+      .col-md-6
+        = f.input :nickname
+      .col-md-6
+        = f.input :avatar
+    .row
+      .col-md-12
+        = f.input :bio, :input_html => {:rows => 5}
 
-  .form-actions
-    = f.button :submit
+    .row
+      .col-md-6
+        = f.input :city
+      .col-md-6
+        = f.input :state, collection: us_states
+    %br
+    = f.button :submit, class: 'btn btn-lg'

@@ -1,5 +1,33 @@
 // import the CSS framework
+
+@import 'variables';
 @import "bootstrap";
+@import 'bootstrap/variables';
+
+
+main{
+  margin-top: 60px !important;
+}
+
+.navbar.navbar-default.navbar-fixed-top{
+  a{
+    font-size:16px;
+    color: black;
+    font-family:'Cedarville Cursive', cursive;
+  }
+
+  li{
+    &:hover{
+      transition: all 1s ease;
+      background-color: $orange;
+    }
+  }
+  border-bottom-width: 5px;
+
+  .navbar-brand {
+    font-size: 26px;
+  }
+}
 
 // make all images responsive by default
 img {
@@ -7,10 +35,10 @@ img {
   margin: 0 auto;
   }
 // override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
 
+.row{
+  margin-top:20px;
+}
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
