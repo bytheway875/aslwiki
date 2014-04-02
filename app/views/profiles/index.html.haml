@@ -1,27 +1,28 @@
-%h1 Listing profiles
+.container.scrollable
+  %h1 Listing profiles
 
-%table
-  %tr
-    %th Nickname
-    %th Bio
-    %th Avatar
-    %th City
-    %th State
-    %th
-    %th
-    %th
-
-  - @profiles.each do |profile|
+  %table
     %tr
-      %td= profile.nickname
-      %td= profile.bio
-      %td= profile.avatar
-      %td= profile.city
-      %td= profile.state
-      -#%td= link_to 'Show', user_profile_path(profile)
-      -#%td= link_to 'Edit', edit_profile_path(profile)
-      -#%td= link_to 'Destroy', user_profile_path, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Nickname
+      %th Bio
+      %th Avatar
+      %th City
+      %th State
+      %th
+      %th
+      %th
 
-%br
+    - @profiles.each do |profile|
+      %tr
+        %td= profile.nickname
+        %td= profile.bio
+        %td= profile.avatar
+        %td= profile.city
+        %td= profile.state
+        -#%td= link_to 'Show', user_profile_path(profile)
+        -#%td= link_to 'Edit', edit_profile_path(profile)
+        -#%td= link_to 'Destroy', user_profile_path, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Profile', new_user_profile_path
+  %br
+
+  = link_to 'New Profile', new_user_profile_path

@@ -14,3 +14,11 @@
 
 @import "bootstrap/variables";
 @import "variables";
+@import 'bootstrap/mixins';
+@import 'mixins';
+
+
+.header{
+  background-color: $orange;
+  height: 300px;
+}

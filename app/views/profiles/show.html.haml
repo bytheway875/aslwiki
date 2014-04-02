@@ -1,19 +1,18 @@
-%p
-  %b Nickname:
-  = @profile.nickname
-%p
-  %b Bio:
-  = @profile.bio
-%p
-  %b Avatar:
-  = image_tag @profile.avatar.url
-%p
-  %b City:
-  = @profile.city
-%p
-  %b State:
-  = @profile.state
+.container
+  %h2
+    = @profile.nickname
+  %p
+    %b About Me:
+    = @profile.bio
+  .pull-left
+    = image_tag @profile.avatar.url
+  %p
+    %b City:
+    = @profile.city
+  %p
+    %b State:
+    = @profile.state
 
-= link_to 'Edit', edit_user_profile_path(@user, @profile)
-\|
-= link_to 'Back', user_profiles_path
+  = link_to 'Edit', edit_user_profile_path(@user, @profile)
+  \|
+  = link_to 'Back', user_profiles_path

@@ -1,7 +1,8 @@
-%h1 Editing profile
+container.scrollable
+  %h1 Editing profile
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', user_profile_path(@user, @profile)
-\|
-= link_to 'Back', user_profiles_path
+  = link_to 'Show', user_profile_path(@user, @profile)
+  \|
+  = link_to 'Back', user_profiles_path
