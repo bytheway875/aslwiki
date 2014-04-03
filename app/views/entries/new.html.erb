@@ -1,0 +1,9 @@
+<%= simple_form_for @entry do |m| %>
+  <%= m.input :word %>
+  <p>Upload your video for this word</p>
+  <%= m.simple_fields_for :signs do |p| %>
+    <%= p.input :video_url %>
+    <%= p.input :description %>
+  <% end %>
+  <%= m.submit %>
+<% end %>
