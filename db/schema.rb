@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402002234) do
+ActiveRecord::Schema.define(version: 20140403033802) do
 
   create_table "comments", force: true do |t|
     t.text    "content"
@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20140402002234) do
   end
 
   create_table "entries", force: true do |t|
-    t.string "word"
+    t.string  "word"
+    t.integer "user_id"
   end
 
   create_table "profiles", force: true do |t|
@@ -46,8 +47,10 @@ ActiveRecord::Schema.define(version: 20140402002234) do
   add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "signs", force: true do |t|
-    t.string "video_url"
-    t.string "description"
+    t.string  "video_url"
+    t.string  "description"
+    t.integer "user_id"
+    t.integer "entry_id"
   end
 
   create_table "users", force: true do |t|

@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
+  has_many :comments
+  has_many :entries
+  has_many :signs
+  has_many :votes
 end
