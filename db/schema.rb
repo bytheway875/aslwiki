@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306000348) do
+ActiveRecord::Schema.define(version: 20140403033802) do
+
+  create_table "comments", force: true do |t|
+    t.text    "content"
+    t.integer "sign_id"
+    t.integer "user_id"
+  end
+
+  create_table "entries", force: true do |t|
+    t.string  "word"
+    t.integer "user_id"
+  end
 
   create_table "profiles", force: true do |t|
     t.string   "nickname"
@@ -34,6 +45,13 @@ ActiveRecord::Schema.define(version: 20140306000348) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "signs", force: true do |t|
+    t.string  "video_url"
+    t.string  "description"
+    t.integer "user_id"
+    t.integer "entry_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -60,5 +78,11 @@ ActiveRecord::Schema.define(version: 20140306000348) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "votes", force: true do |t|
+    t.integer "user_id"
+    t.integer "sign_id"
+    t.boolean "like"
+  end
 
 end
