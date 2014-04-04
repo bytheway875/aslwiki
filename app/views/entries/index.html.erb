@@ -1,7 +1,9 @@
 <%@entries.each do |entry| %>
-<li><%= entry.word %></li>
-  <%entry.each do |sign| %>
-  <li><%= sign.video_url %></li>
-  <li><%= sign.description %></li>
+  <li><%= entry.word %></li>
+  <%entry.signs.each do |x|%>
+    <ul>
+      <li><%= x.video_url %></li>
+      <li><%= x.description %></li>
+    </ul>
   <%end%>
 <%end%>

@@ -1,4 +1,6 @@
 <%= form_for @entry do |m| %>  
+  <p><%=@entry.word%></p>
+  
   <%= m.fields_for :signs do |signs_form| %>
     <%= signs_form.label :video_url %>
     <%= signs_form.text_field :video_url %>

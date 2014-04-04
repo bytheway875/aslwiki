@@ -2,10 +2,12 @@ class SignsController < ApplicationController
   before_action :set_instance_variables, only: [:show, :edit, :update]
   def new
     @sign = Sign.new
+    @entry = Entry.find_by(@sign.entry_id)
   end
 
   def create
     @sign = Sign.new(sign_params)
+    @entry = Entry.find_by(@sign.entry_id)
       
       respond_to do |format|
         if @sign.save
