@@ -1,0 +1,9 @@
+<%= form_for @entry do |m| %>  
+  <%= m.fields_for :signs do |signs_form| %>
+    <%= signs_form.label :video_url %>
+    <%= signs_form.text_field :video_url %>
+    <%= signs_form.label :description %>
+    <%= signs_form.text_field :description%>
+  <% end %>
+  <%= m.submit %>
+<% end %>

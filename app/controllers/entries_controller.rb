@@ -57,6 +57,6 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:word)
+    params.require(:entry).permit(:word, signs_attributes: [:id, :video_url, :description])
   end
 end

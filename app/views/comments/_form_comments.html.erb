@@ -1,0 +1,7 @@
+<%= form_for @sign do |m| %>  
+  <%= m.fields_for :comments do |comment| %>
+    <%= comment.label :comment %>
+    <%= comment.text_field :comment %>
+  <% end %>
+  <%= m.submit %>
+<% end %>

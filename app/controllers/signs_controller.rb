@@ -57,6 +57,6 @@ class SignsController < ApplicationController
   end
 
   def sign_params
-    params.require(:sign).permit(:video_url, :description)
+    params.require(:sign).permit(:video_url, :description, comments_attributes: [:id, :comment])
   end
 end
